@@ -5,6 +5,12 @@
   "author": "Ambroise de Lima",
   "license": "MIT",
   "url": "https://github.com/delimaa/nest-pulsar",
+  "keywords": [
+    "Nest",
+    "Pulsar",
+    "Node",
+    "TypeScript"
+  ],
   "scripts": {
     "build": "rimraf dist && tsc -p tsconfig.build.json",
     "format": "prettier --write \"**/*.ts\"",
