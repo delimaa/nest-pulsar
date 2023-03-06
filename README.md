@@ -34,6 +34,10 @@
 $ npm install --save nest-pulsar pulsar-client
 ```
 
+> **Note**
+>
+> Pulsar Node.js client library is based on the C++ client library. You must install the Pulsar C++ client library before installing a Node.js client. For more details, see [pulsar-client-node on GitHub](https://github.com/apache/pulsar-client-node) or [The Pulsar Node.js client dedicated page](https://pulsar.apache.org/docs/2.11.x/client-libraries-node) on [Apache Pulsar documentation](https://pulsar.apache.org/docs/2.11.x).
+
 ## Getting started
 
 Once the installation process (npm install) is complete, we can import the `PulsarModule` into the root `AppModule`.
@@ -54,7 +58,9 @@ export class AppModule {}
 
 The `forRoot()` method supports all the configuration properties exposed by the Client class constructor from the `pulsar-client` package.
 
-> **Note** > `forRoot()` inject the Pulsar Client provider globally.
+> **Note**
+>
+> `forRoot()` inject the Pulsar Client provider globally.
 
 Next, let's look at another module, let's say the `UsersModule`.
 
@@ -83,6 +89,7 @@ export class UsersModule {}
 ```
 
 > **Warning**
+>
 > Producer, consumer or reader name (2nd param) is mandatory. Please note that you shouldn't have multiple producers, consumers or readers with the same name, otherwise they will get overridden.
 
 The `forFeature()` method third param supports all the configuration properties exposed by the following Pulsar `Client` factory methods:
@@ -199,6 +206,7 @@ export class AppModule {}
 ```
 
 > **Warning**
+>
 > If you don't set the name for a client, its name is set to default. Please note that you shouldn't have multiple clients without a name, or with the same name, otherwise they will get overridden.
 
 If you are using `PulsarModule.forRootAsync()`, you have to also set the client name the same way:
